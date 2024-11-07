@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - IDeal</title>
+    <!-- link para o arquivo css -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Adicionar Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script>
+        // Suas configurações do Firebase
+        var firebaseConfig = {
+            apiKey: "AIzaSyBW_RispdaG5tRPplcb31JhardrgnuC4NM",
+            authDomain: "ideal-software-database.firebaseapp.com",
+            projectId: "ideal-software-database",
+            storageBucket: "ideal-software-database.appspot.com",
+            messagingSenderId: "1072110619447",
+            appId: "1:1072110619447:web:46418003ebee4b7a54a8b2"
+        };
+        // Inicializar Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <!-- container principal para a tela de login -->
+    <div class="login-container">
+        <!-- logo da empresa -->
+        <img src="logo.png" alt="logo IDeal" class="logo">
+
+        <!-- formulário de login -->
+        <form class="login-form" id="login-form">
+            <!-- campo de entrada para o e-mail -->
+            <input type="text" id="email" placeholder="E-mail" class="input-field">
+            <!-- campo de entrada para a senha com ícone de olho --> 
+            <div class="password-container"> 
+                <input type="password" id="password" placeholder="Senha" class="input-field"> 
+                <span class="toggle-password" id="toggle-password"></span><!-- Ícone de olho --> 
+            </div>
+            <!-- container para o checkbox de "manter conectado" -->
+            <div class="checkbox-container">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Mantenha-me conectado neste dispositivo</label>
+            </div>
+            <!-- container para os botões de login e registro -->
+            <div class="button-container">
+                <button type="submit" class="login-button">Login</button>
+                <button id="register-button" class="login-button">Registrar</button>
+            </div>
+        </form>
+        <!-- botão de login anônimo, inicialmente escondido -->
+        <button id="anonymous-login" class="login-button hidden">Login Anônimo</button>
+    </div> <!-- fechamento do container de login -->
+    <div class="pedrao-top">
+        <p>Pedro Peruzzo - Projeto Integrador 2024</p>
+    </div>
+    
+    <!-- Script de login -->
+    <script src="login.js"></script>
+</body>
+</html>
